@@ -1,11 +1,14 @@
-import './App.css'
-import FaceExpression from './features/Expression/components/FaceExpression'
+import { AppRoutes } from "./AppRoutes";
+import "./features/shared/style/global.scss";
+import FaceExpression from "./features/Expression/components/FaceExpression";
+import { AuthProvider } from "./features/auth/auth.context";
 
 function App() {
-
   return (
-    <FaceExpression />
-  )
+    <AuthProvider>
+      <AppRoutes></AppRoutes>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;
